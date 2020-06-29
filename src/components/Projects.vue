@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h1 class="font-bold">Projects</h1>
+    <h1 class="font-bold">My projects</h1>
     <div class="w-100" v-for="project in projects" :key="project.id">
       <div class="w-4/5 xl:w-2/5 bg-gray-500 rounded-xl">
-        <Project :project="project" class="text-gray-200 m-5 mt-16" />
+        <Project v-if="project.id === 1" :project="project" class="text-gray-200 m-5" />
+        <Project v-else :project="project" class="text-gray-200 m-5 mt-16" />
       </div>
       <div class="w-4/5">
         <div class="text-gray-200 inline-block" v-for="tech in project.technology" :key="tech">

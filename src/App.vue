@@ -45,6 +45,6 @@ body {
   height: 100%;
 }
 body {
-  background-color: #f7fafc;
+  background-color: #f1f1f1;
 }
 </style>

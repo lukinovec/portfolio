@@ -277,6 +277,7 @@ module.exports = {
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
+      '90': '90%',
       screen: '100vh',
     }),
     inset: {
