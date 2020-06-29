@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="w-11/12 h-full mx-auto">
+    <Main />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Main from "./components/Main.vue";
+
+export let store = {
+  debug: true,
+  state: {
+    message: "Hello!",
+    searchtype: "movies",
+    search: "",
+    users_movies: [],
+    results: []
+  },
+  // Change state
+  mutateSearch(newValue) {
+    this.state.search = newValue;
+  },
+  setMessageAction(newValue) {
+    if (this.debug) console.log("setMessageAction triggered with", newValue);
+    this.state.message = newValue;
+  },
+  clearMessageAction() {
+    if (this.debug) console.log("clearMessageAction triggered");
+    this.state.message = "";
+  }
+};
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Main
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "../public/build/tailwind.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #f7fafc;
 }
 </style>
