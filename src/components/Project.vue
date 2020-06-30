@@ -5,30 +5,36 @@
         <h1 class="font-bold">{{ project.name }}</h1>
         <p class="text-2xl">{{ project.description }}</p>
       </div>
-      <div class="w-100 p-4 text-lg">
-        <button class="w-1/3 bg-gray-600 p-2 rounded-xl">
-          <svg
-            aria-hidden="true"
-            data-prefix="fas"
-            data-icon="external-link-alt"
-            class="svg-inline--fa fa-external-link-alt fa-w-18 block mx-auto"
-            width="40%"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 576 512"
-            data-reactid="68"
+      <div class="w-100 p-4 text-base">
+        <a :href="project.live" target="_blank" rel="noopener noreferrer">
+          <button
+            class="w-1/3 bg-gray-600 p-2 rounded-xl transition duration-300 ease-in-out hover:bg-gray-700 transform hover:-translate-y-1 hover:scale-110"
           >
-            <path
-              fill="currentColor"
-              d="M576 24v127.984c0 21.461-25.96 31.98-40.971 16.971l-35.707-35.709-243.523 243.523c-9.373 9.373-24.568 9.373-33.941 0l-22.627-22.627c-9.373-9.373-9.373-24.569 0-33.941L442.756 76.676l-35.703-35.705C391.982 25.9 402.656 0 424.024 0H552c13.255 0 24 10.745 24 24zM407.029 270.794l-16 16A23.999 23.999 0 0 0 384 303.765V448H64V128h264a24.003 24.003 0 0 0 16.97-7.029l16-16C376.089 89.851 365.381 64 344 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V287.764c0-21.382-25.852-32.09-40.971-16.97z"
-              data-reactid="69"
-            />
-          </svg>
-          Try it
-        </button>
+            <svg
+              aria-hidden="true"
+              data-prefix="fas"
+              data-icon="external-link-alt"
+              class="svg-inline--fa fa-external-link-alt fa-w-18 block mx-auto"
+              width="40%"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+              data-reactid="68"
+            >
+              <path
+                fill="currentColor"
+                d="M576 24v127.984c0 21.461-25.96 31.98-40.971 16.971l-35.707-35.709-243.523 243.523c-9.373 9.373-24.568 9.373-33.941 0l-22.627-22.627c-9.373-9.373-9.373-24.569 0-33.941L442.756 76.676l-35.703-35.705C391.982 25.9 402.656 0 424.024 0H552c13.255 0 24 10.745 24 24zM407.029 270.794l-16 16A23.999 23.999 0 0 0 384 303.765V448H64V128h264a24.003 24.003 0 0 0 16.97-7.029l16-16C376.089 89.851 365.381 64 344 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V287.764c0-21.382-25.852-32.09-40.971-16.97z"
+                data-reactid="69"
+              />
+            </svg>
+            <p class="mx-auto">Try it</p>
+          </button>
+        </a>
         <button class="w-1/3"></button>
         <a :href="getGithub" target="_blank" rel="noopener noreferrer">
-          <button class="w-1/3 bg-gray-600 p-2 rounded-xl">
+          <button
+            class="w-1/3 bg-gray-600 p-2 rounded-xl transition duration-300 ease-in-out hover:bg-gray-700 transform hover:-translate-y-1 hover:scale-110"
+          >
             <svg
               aria-hidden="true"
               data-prefix="fab"
@@ -46,14 +52,15 @@
                 data-reactid="72"
               />
             </svg>
-            GitHub
+            <p class="mx-auto">GitHub</p>
           </button>
         </a>
       </div>
     </div>
 
-    <div class="lg:py-6 lg:w-11/12 hidden lg:block">
-      <img :src="project.image" class="rounded-xl" />
+    <div class="lg:my-auto lg:w-11/12 hidden lg:block">
+      <img v-if="project.name !== 'Portfolio'" :src="project.image" class="rounded-xl my-3 image" />
+      <img v-else :src="project.image" class="rounded-xl my-5 image" />
     </div>
   </div>
 </template>
@@ -70,6 +77,6 @@ export default {
   }
 };
 </script>
-
-<style>
+  
+<style scoped>
 </style>

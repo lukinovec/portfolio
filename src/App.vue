@@ -7,29 +7,6 @@
 <script>
 import Main from "./components/Main.vue";
 
-export let store = {
-  debug: true,
-  state: {
-    message: "Hello!",
-    searchtype: "movies",
-    search: "",
-    users_movies: [],
-    results: []
-  },
-  // Change state
-  mutateSearch(newValue) {
-    this.state.search = newValue;
-  },
-  setMessageAction(newValue) {
-    if (this.debug) console.log("setMessageAction triggered with", newValue);
-    this.state.message = newValue;
-  },
-  clearMessageAction() {
-    if (this.debug) console.log("clearMessageAction triggered");
-    this.state.message = "";
-  }
-};
-
 export default {
   name: "App",
   components: {
@@ -42,6 +19,7 @@ export default {
 @import "../public/build/tailwind.css";
 html,
 body {
+  width: 100%;
   height: 100%;
 }
 body {
