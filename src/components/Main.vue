@@ -3,7 +3,7 @@
     <Landing class="h-screen" id="landing" />
     <Projects class="text-4xl" id="projects" :projects="projects" />
     <Contact class="h-screen" id="contact" />
-    <Footer class="w-100" />
+    <Arrow class="w-100" />
   </div>
 </template>
 
@@ -11,11 +11,11 @@
 import Projects from "./Projects.vue";
 import Contact from "./Contact.vue";
 import Landing from "./Landing.vue";
-import Footer from "./Footer.vue";
+import Arrow from "./Arrow.vue";
 
 export default {
   name: "Main",
-  components: { Projects, Contact, Landing, Footer },
+  components: { Projects, Contact, Landing, Arrow },
   data: function() {
     return {
       projects: {
